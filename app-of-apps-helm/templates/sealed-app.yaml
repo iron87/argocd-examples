@@ -22,7 +22,7 @@ spec:
           - name: service.port
             value: "8081"
         valueFiles:
-          - $valuerepo/apps/sealed-values/values.yaml
+          - $valuerepo/app-values/sealed-values/values.yaml
   destination:
     name: in-cluster
     namespace: default
