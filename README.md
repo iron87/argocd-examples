@@ -1,4 +1,4 @@
-# Argocd Examples Repository
+# Argocd Examples
 
 This repository contains examples showcasing the usage of Argo CD for managing Kubernetes applications. It demonstrates how to leverage Argo CD's features and best practices for application deployment and management.
 
