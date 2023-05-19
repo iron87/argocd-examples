@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: argocd
+  name: umbrella-helm-app
+spec:
+  syncPolicy:
+      automated: {}
+      syncOptions:
+        - CreateNamespace=true
+  destination:
+    name: in-cluster
+  project: default
+  source:
+    path: umbrella-helm
+    repoURL: https://github.com/iron87/argocd-examples
+    targetRevision: feature/argocd-config
+

@@ -22,6 +22,10 @@ To use these examples, follow the steps below:
 
 This file `app-of-apps-helm.yaml` demonstrates the creation of an Application of Applications using a Helm chart. It showcases how to use the `ARGOCD_APP_SOURCE_REPO_URL` environment variable to reference the Git repository URL, allowing you to utilize Helm values from an external Git repository without hardcoding the URL in the application's YAML file.
 
+### app-umbrella-helm.yaml
+
+This file `app-umbrella-helm.yaml` contains an example of an Umbrella chart. It allows you to use a chart from an Helm repository and customize it with values from the reference Git repository. This enables you to easily deploy and manage complex applications with Helm charts while leveraging the flexibility of external Git repositories for configuration and customization.
+
 For more details on this usage, refer to the official Argo CD documentation.
 
 ## Contributing
