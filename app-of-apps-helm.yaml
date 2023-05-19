@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: argocd
+  name: root-app-of-apps-helm
+spec:
+  syncPolicy:
+      automated: {}
+      syncOptions:
+        - CreateNamespace=true
+  destination:
+    name: in-cluster
+  project: default
+  source:
+    path: app-of-apps-helm
+    repoURL: https://github.com/iron87/argocd-examples
+    targetRevision: main
+    helm:
+      parameters:
+        - name: spec.source.repoURL
+          value: $ARGOCD_APP_SOURCE_REPO_URL

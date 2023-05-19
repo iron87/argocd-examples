@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sealed-secrets
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+  project: default
+  sources:
+    - repoURL: {{ .Values.spec.source.repoURL}}
+      targetRevision: feature/argocd-config
+      ref: valuerepo
+    - chart: sealed-secrets
+      repoURL: https://bitnami-labs.github.io/sealed-secrets
+      targetRevision: 2.8.2
+      helm:
+        releaseName: sealed-secrets
+        parameters:
+          - name: service.port
+            value: "8081"
+        valueFiles:
+          - $valuerepo/apps/sealed-values/values.yaml
+  destination:
+    name: in-cluster
+    namespace: default
