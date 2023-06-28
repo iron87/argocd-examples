@@ -28,6 +28,10 @@ This file `app-umbrella-helm.yaml` contains an example of an Umbrella chart. It 
 
 For more details on this usage, refer to the official Argo CD documentation.
 
+### gitlab-private-repo-secret.yaml
+
+The gitlab-private-repo-secret.yaml file contains a secret used for authenticating ArgoCD to a private GitLab repository using a token.
+
 ## Contributing
 
 Contributions to this repository are welcome! If you have any improvements, additional examples, or fixes, feel free to open a pull request.
