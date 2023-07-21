@@ -14,5 +14,5 @@ spec:
   source:
     path: umbrella-helm
     repoURL: https://github.com/iron87/argocd-examples
-    targetRevision: feature/argocd-config
+    targetRevision: main
 
